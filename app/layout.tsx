@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import Welcome from "./components/Welcome";
 import { Inter } from "next/font/google";
+import Docker from "./components/Dock";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -35,6 +36,7 @@ export default function RootLayout({
       <body className="antialiased relative">
         <Navbar />
         <Welcome/>
+        <Docker/>
         <main className="pt-8">{children}</main>
       </body>
     </html>

@@ -65,37 +65,48 @@ body {
     @apply p-1 hover:bg-gray-200 rounded hover:cursor-default;
   }
 
-  #welcome {
-    @apply text-gray-200 flex flex-col justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none max-sm:h-screen max-sm:w-full max-sm:px-10;
+ #welcome {
+  @apply text-gray-200 flex flex-col justify-center items-center h-screen select-none max-sm:h-screen max-sm:w-full max-sm:px-10;
 
-    .small-screen {
-      @apply sm:hidden m-7 bg-red-300/20 backdrop-blur-lg p-3 rounded-md absolute top-10;
+  .small-screen {
+    @apply sm:hidden m-7 bg-red-300/20 backdrop-blur-lg p-3 rounded-md absolute top-10;
 
-      p {
-        @apply flex-1 text-[16px] text-center font-roboto text-gray-400;
-      }
+    p {
+      @apply flex-1 text-[16px] text-center font-roboto text-gray-400;
     }
   }
+}
 
-  #dock {
-    @apply absolute bottom-5 left-1/2 -translate-x-1/2 z-50 select-none max-sm:hidden;
 
-    .dock-container {
-      @apply bg-white/20 backdrop-blur-md justify-between rounded-2xl p-1.5 flex items-end gap-1.5;
-    }
+ #dock {
+  @apply fixed bottom-6 left-1/2 -translate-x-1/2 z-50 select-none max-sm:hidden;
 
-    .tooltip {
-      @apply !py-1 !px-3 !w-fit !text-center !text-xs !rounded-md !bg-blue-200 !text-blue-900 !shadow-2xl;
-    }
-
-    .dock-icon {
-      @apply size-14 3xl:size-20 cursor-pointer;
-
-      img {
-        @apply object-cover object-center;
-      }
-    }
+  .dock-container {
+    @apply flex items-end gap-3 px-4 py-2 rounded-2xl backdrop-blur-xl bg-white/20 shadow-2xl;
   }
+
+  .dock-item {
+    @apply flex justify-center items-end;
+    will-change: transform;
+  }
+
+  .tooltip {
+    @apply !py-1 !px-3 !w-fit !text-center !text-xs !rounded-md !bg-blue-200 !text-blue-900 !shadow-2xl;
+  }
+
+  .dock-icon {
+    @apply size-14 3xl:size-20 cursor-pointer;
+  }
+
+  .dock-icon img {
+    @apply w-full h-full object-contain pointer-events-none;
+  }
+
+  .dock-icon:disabled {
+    @apply opacity-60 cursor-default;
+  }
+}
+
 
   #window-controls {
     @apply flex gap-2;
